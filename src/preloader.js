@@ -22,8 +22,8 @@ Lab.Preloader.prototype = {
 
         this.game.load.audio('title', ['./bin/audio/title.mp3', './bin/audio/title.ogg']);
 
-        this.game.load.image('logo', './bin/logo.png');
-        this.game.load.image('watermark', './bin/watermark.png');
+        this.game.load.image('logo', './bin/sprites/logo.png');
+        this.game.load.image('watermark', './bin/sprites/watermark.png');
         this.game.load.bitmapFont('04b03', './bin/fonts/04b_0.png', './bin/fonts/04b.xml');
 	},
 

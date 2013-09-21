@@ -1,0 +1,30 @@
+body{
+    background: #222;
+}
+#logo{
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 197px;
+    height: 103px;
+    background: url('pagelogo.png') no-repeat;
+    background-size: 197px 103px;
+}
+foot{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    color: #990000;
+}
+canvas{
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: solid thin #333;
+}

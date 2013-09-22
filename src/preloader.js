@@ -11,6 +11,7 @@ Lab.Preloader.prototype = {
 	preload: function () {
         console.log('Preload started.');
 
+        //<editor-fold desc="Main Menu Preload">
         var text = "Loading: 0%";
         var style = { font: "12px Arial", fill: "#ffffff", align: "center" };
         progress = this.game.add.text(this.game.world.centerX, this.game.world.centerY, text, style);
@@ -18,16 +19,21 @@ Lab.Preloader.prototype = {
         bar = this.game.add.text(this.game.world.centerX, this.game.world.centerY + 50, '', style);
         bar.anchor.setTo(0.5, 0.5);
 
-        this.game.stage.backgroundColor = 0x000000;
-
         this.game.load.audio('title', ['./bin/audio/title.mp3', './bin/audio/title.ogg']);
-
         this.game.load.image('logo', './bin/sprites/logo.png');
         this.game.load.image('watermark', './bin/sprites/watermark.png');
         this.game.load.bitmapFont('04b03', './bin/fonts/04b_0.png', './bin/fonts/04b.xml');
+        //</editor-fold>
+
+        //<editor-fold desc="Game Preload">
+        //TODO: Load spritesheets.
+        this.game.load.spritesheet('player', './bin/sprites/player.png', 32, 32, 3);
+        //</editor-fold>
+
 	},
 
 	create: function () {
+        this.game.stage.backgroundColor = 0x000000;
 		console.log('Preload finished.');
 		this.game.state.start('mainmenu');
 	},

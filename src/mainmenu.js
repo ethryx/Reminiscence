@@ -4,16 +4,13 @@ Lab.MainMenu = function (game) {
 
 Lab.MainMenu.prototype = {
 
-    preloader: function () {
-
+    preload: function () {
+        music = this.game.add.audio('title');
     },
 
 	create: function () {
         console.log('Main Menu loaded.');
         var font = '32px 04b03';
-
-        music = this.game.add.audio('title');
-        //
 
         background = this.game.add.sprite(0,0,'logo');
 

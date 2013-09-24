@@ -5,7 +5,7 @@ Lab.Game = function (game) {
 };
 
 var player;
-var FPS = 6;
+var FPS = 8;
 
 Lab.Game.prototype = {
 
@@ -31,36 +31,47 @@ Lab.Game.prototype = {
 
     update: function () {
 
+        player.acceleration.y = 4000;
 
-        player.acceleration.y = 1000;
-
-        if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
-            player.animations.play('walk', FPS, true);
-            player.scale.setTo(-3,3);
-            player.body.velocity.x = -200;
-        } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)){
-            player.animations.play('walk', FPS, true);
-            player.scale.setTo(3,3);
-            player.body.velocity.x = 200;
+        if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT) || this.game.input.keyboard.isDown(Phaser.Keyboard.A)){
+            this.movePlayer('LEFT');
+        } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT) || this.game.input.keyboard.isDown(Phaser.Keyboard.D)){
+            this.movePlayer('RIGHT');
         } else {
             if (player.velocity.x < 0){
-                player.body.velocity.x += 20;
+                player.body.velocity.x += 50;
             } else if (player.velocity.x > 0){
-                player.body.velocity.x -= 20;
+                player.body.velocity.x -= 50;
             }
             player.animations.stop();
         }
-        if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP))
-        {
-            if (!player.body.touching.down)
-            {
-                player.body.velocity.y = -200;
-            }
+
+        if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP) ||
+            this.game.input.keyboard.isDown(Phaser.Keyboard.W) ||
+            this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)){
+            this.movePlayer('UP');
         }
     },
 
 	quitToMenu: function () {
 		console.log('Quitting.');
 		this.game.state.start('mainmenu');
-	}
+	},
+
+    movePlayer: function (d) {
+        player.animations.play('walk', FPS, true);
+        switch(d){
+            case 'LEFT':
+                player.scale.setTo(-3,3);
+                player.body.velocity.x = -250;
+                break;
+            case 'RIGHT':
+                player.scale.setTo(3,3);
+                player.body.velocity.x = 250;
+                break;
+            case 'UP':
+                player.body.velocity.y = -400;
+                break;
+        }
+    }
 }

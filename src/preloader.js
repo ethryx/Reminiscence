@@ -27,7 +27,6 @@ Lab.Preloader.prototype = {
         //TODO: Load spritesheets.
         this.game.load.image('watermark', './bin/sprites/watermark.png');
         this.game.load.spritesheet('player', './bin/sprites/player.png', 32, 32, 3);
-        this.game.load.image('particle', './bin/sprites/particle.png');
         //</editor-fold>
 
 	},
@@ -41,8 +40,9 @@ Lab.Preloader.prototype = {
     loadUpdate: function () {
         progress.text = 'Loading:  ' + this.game.load.progress + '%';
         progress.updateText();
+        bar.text = "";
         for (var i = 0; i < this.game.load.progress / 10; i++){
-            bar.text = '|';
+            bar.text += '|';
             bar.updateText();
         }
     }

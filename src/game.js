@@ -6,6 +6,7 @@ Lab.Game = function (game) {
 
 var player;
 var FPS = 8;
+var PLAYER_SCALE = 2;
 
 Lab.Game.prototype = {
 
@@ -23,7 +24,7 @@ Lab.Game.prototype = {
         player.body.collideWorldBounds = true;
 
         player.anchor.setTo(0.5,0.5);
-        player.scale.setTo(3,3);
+        player.scale.setTo(PLAYER_SCALE,PLAYER_SCALE);
         player.animations.add('walk');
 
 		this.game.input.onDown.add(this.quitToMenu, this);
@@ -62,14 +63,16 @@ Lab.Game.prototype = {
         player.animations.play('walk', FPS, true);
         switch(d){
             case 'LEFT':
-                player.scale.setTo(-3,3);
+                player.scale.setTo(-PLAYER_SCALE,PLAYER_SCALE);
                 player.body.velocity.x = -250;
                 break;
             case 'RIGHT':
-                player.scale.setTo(3,3);
+                player.scale.setTo(PLAYER_SCALE,PLAYER_SCALE);
                 player.body.velocity.x = 250;
                 break;
             case 'UP':
+                //TODO: Real ground check
+                player.animations.stop(0);
                 player.body.velocity.y = -400;
                 break;
         }

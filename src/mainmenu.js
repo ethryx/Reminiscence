@@ -23,10 +23,10 @@ Lab.MainMenu.prototype = {
 
         var startText = this.game.add.bitmapText(1, 1, 'Start Game', {font: font, align: 'left'});
         startText.anchor.setTo(0.5,0.5);
-        startText.x = playButton.x;
-        startText.y = playButton.y;
-        playButton.width = startText.width;
-        playButton.height = startText.height;
+        startText.x = startButton.x;
+        startText.y = startButton.y;
+        startButton.width = startText.width;
+        startButton.height = startText.height;
         //</editor-fold>
 
         //<editor-fold desc="Options Button & Text">

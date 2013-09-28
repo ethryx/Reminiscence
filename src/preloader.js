@@ -26,7 +26,7 @@ Lab.Preloader.prototype = {
         //<editor-fold desc="Game Preload">
         //TODO: Load spritesheets.
         this.game.load.image('watermark', './bin/sprites/watermark.png');
-        this.game.load.spritesheet('player', './bin/sprites/player.png', 32, 32, 3);
+        this.game.load.spritesheet('player', './bin/sprites/newplayer.png', 32, 32, 3);
         //</editor-fold>
 
 	},

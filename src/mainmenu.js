@@ -15,11 +15,11 @@ Lab.MainMenu.prototype = {
         background = this.game.add.sprite(0,0,'logo');
 
         //<editor-fold desc="Start Game Button & Text">
-        var playButton = this.game.add.button(this.game.world.centerX, this.game.world.centerY + 75, 'blank', this.startGame, this, 0, 0, 0);
-        playButton.anchor.setTo(0.5, 0.5);
-        playButton.inputEnabled = true;
-        playButton.events.onInputOver.add(over, this);
-        playButton.events.onInputOut.add(out, this);
+        var startButton = this.game.add.button(this.game.world.centerX, this.game.world.centerY + 75, 'blank', this.startGame, this, 0, 0, 0);
+        startButton.anchor.setTo(0.5, 0.5);
+        startButton.inputEnabled = true;
+        startButton.events.onInputOver.add(over, this);
+        startButton.events.onInputOut.add(out, this);
 
         var startText = this.game.add.bitmapText(1, 1, 'Start Game', {font: font, align: 'left'});
         startText.anchor.setTo(0.5,0.5);

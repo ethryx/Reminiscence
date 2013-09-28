@@ -32,7 +32,7 @@ Lab.Preloader.prototype = {
 	},
 
 	create: function () {
-        this.game.stage.backgroundColor = 0x000000;
+        this.game.stage.backgroundColor = 0x666666;
 		console.log('Preload finished.');
 		this.game.state.start('mainmenu');
 	},

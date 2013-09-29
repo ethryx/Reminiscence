@@ -4,7 +4,6 @@ Lab.Game = function (game) {
 
 };
 
-var player;
 var FPS = 8;
 var PLAYER_SCALE = 2;
 
@@ -12,10 +11,11 @@ Lab.Game.prototype = {
 
 	preload: function () {
         console.log('Game started.');
-        player = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'player');
+        p = new Player(this.game, this.game.world.centerX, this.game.world.centerY, 'player');
 	},
 
 	create: function () {
+        player = p.create();
         var watermark = this.game.add.sprite(0, 0, 'watermark');
         watermark.x = this.game.world.width - watermark.width;
         watermark.y = this.game.world.height - watermark.height;

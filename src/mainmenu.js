@@ -9,7 +9,6 @@ Lab.MainMenu.prototype = {
     },
 
 	create: function () {
-        console.log('Main Menu loaded.');
         var font = '32px 04b03';
 
         background = this.game.add.sprite(0,0,'logo');

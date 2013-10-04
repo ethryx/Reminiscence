@@ -3,6 +3,7 @@ require(["../lib/phaser"], function(util) {
         require(["./mainmenu"], function(util) {
             require(["./options"], function(util) {
             require(["./game"], function(util) {
+                require(["./classes/Level"], function(util){});
                 require(["./classes/Player"], function(util){});
                 var game = new Phaser.Game(800, 600, Phaser.AUTO);
                 game.state.add('preloader', Lab.Preloader, true);

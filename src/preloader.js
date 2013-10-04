@@ -9,7 +9,7 @@ var progress, bar;
 Lab.Preloader.prototype = {
 
 	preload: function () {
-        console.log('Preload started.');
+
         //<editor-fold desc="Main Menu Preload">
         var text = "Loading: 0%";
         var style = { font: "12px Arial", fill: "#ffffff", align: "center" };
@@ -24,7 +24,7 @@ Lab.Preloader.prototype = {
         //</editor-fold>
 
         //<editor-fold desc="Game Preload">
-        //TODO: Load spritesheets.
+        this.game.load.tilemap('test2', './bin/levels/test2.png', './bin/levels/test2.json', null, Phaser.Tilemap.JSON);
         this.game.load.image('watermark', './bin/sprites/watermark.png');
         this.game.load.spritesheet('player', './bin/sprites/newplayer.png', 32, 32, 3);
         //</editor-fold>
@@ -33,7 +33,6 @@ Lab.Preloader.prototype = {
 
 	create: function () {
         this.game.stage.backgroundColor = 0x666666;
-		console.log('Preload finished.');
 		this.game.state.start('mainmenu');
 	},
 
